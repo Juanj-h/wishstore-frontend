@@ -1,0 +1,65 @@
+ <p>catalog-page works!</p>
+<app-navbar></app-navbar>
+
+<main class="catalog-container">
+
+  <section class="catalog-header">
+
+    <h1>Catálogo</h1>
+
+    <p>
+      Encuentra tus productos favoritos.
+    </p>
+
+  </section>
+
+  <section class="search-section">
+
+    <app-product-search
+      (results)="searchProducts($event)"
+    ></app-product-search>
+
+  </section>
+
+  <section>
+
+    <h2>Categorías</h2>
+
+    <app-category-filter
+      (categorySelected)="filterByCategory($event)"
+    ></app-category-filter>
+
+  </section>
+
+  <app-loading
+    *ngIf="loading"
+    message="Cargando productos..."
+  ></app-loading>
+
+  <app-error-state
+    *ngIf="error && !loading"
+    message="No fue posible cargar los productos."
+  ></app-error-state>
+
+  <app-empty-state
+    *ngIf="!loading && !error && products.length === 0"
+    title="No encontramos productos."
+    message="No hay productos disponibles."
+  ></app-empty-state>
+
+  <section
+    class="products-grid"
+    *ngIf="!loading && !error && products.length > 0"
+  >
+
+    <app-product-card
+      *ngFor="let product of products"
+      [product]="product"
+      (wishlist)="addToWishlist($event)"
+    ></app-product-card>
+
+  </section>
+
+</main>
+
+<app-footer></app-footer>
