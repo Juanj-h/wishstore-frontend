@@ -1,0 +1,61 @@
+<p>product-card works!</p>
+<mat-card class="product-card">
+
+  <img
+    mat-card-image
+    [src]="product.image || 'assets/images/product-placeholder.png'"
+    [alt]="product.name"
+  >
+
+  <mat-card-content>
+
+    <span class="category">
+      {{ product.category }}
+    </span>
+
+    <h2>{{ product.name }}</h2>
+
+    <p class="description">
+      {{ product.description }}
+    </p>
+
+    <div class="product-info">
+
+      <strong>
+        ${{ product.price | number:'1.0-0' }}
+      </strong>
+
+      <span>
+        Stock: {{ product.stock }}
+      </span>
+
+    </div>
+
+  </mat-card-content>
+
+  <mat-card-actions>
+
+    <a
+      mat-raised-button
+      color="primary"
+      [routerLink]="['/product', product.id]"
+    >
+      Ver detalle
+    </a>
+
+    <button
+      mat-icon-button
+      [color]="favorite ? 'warn' : undefined"
+      (click)="addToWishlist()"
+      [attr.aria-label]="favorite ? 'Quitar de favoritos' : 'Agregar a favoritos'"
+    >
+
+      <mat-icon>
+        {{ favorite ? 'favorite' : 'favorite_border' }}
+      </mat-icon>
+
+    </button>
+
+  </mat-card-actions>
+
+</mat-card>

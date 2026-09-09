@@ -1,0 +1,49 @@
+<p>navbar works!</p>
+<mat-toolbar class="navbar">
+
+  <div class="brand" routerLink="/">
+    <mat-icon>shopping_bag</mat-icon>
+    <span>WishStore</span>
+  </div>
+
+  <nav class="navigation">
+
+    <a mat-button routerLink="/">
+      Inicio
+    </a>
+
+    <a mat-button routerLink="/catalog">
+      Catálogo
+    </a>
+
+    <a mat-button routerLink="/wishlist">
+      Wishlist
+    </a>
+
+    <a mat-button routerLink="/history">
+      Historial
+    </a>
+
+  </nav>
+
+  <div class="search-box">
+
+    <mat-form-field appearance="outline">
+
+      <mat-label>Buscar</mat-label>
+
+      <input
+        matInput
+        [formControl]="searchControl"
+        placeholder="Buscar productos"
+      >
+
+      <mat-icon matSuffix>
+        search
+      </mat-icon>
+
+    </mat-form-field>
+
+  </div>
+
+</mat-toolbar>

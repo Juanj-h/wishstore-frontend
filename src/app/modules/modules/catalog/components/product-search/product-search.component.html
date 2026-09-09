@@ -1,0 +1,19 @@
+<p>product-search works!</p>
+<mat-form-field
+  appearance="outline"
+  class="search-field"
+>
+
+  <mat-label>Buscar productos</mat-label>
+
+  <input
+    matInput
+    [formControl]="searchControl"
+    placeholder="Ejemplo: teléfono"
+  >
+
+  <mat-icon matSuffix>
+    search
+  </mat-icon>
+
+</mat-form-field>

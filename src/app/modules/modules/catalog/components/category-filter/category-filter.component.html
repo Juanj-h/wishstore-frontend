@@ -1,0 +1,19 @@
+ <p>category-filter works!</p>
+<div class="category-container">
+
+  <button
+    mat-stroked-button
+    (click)="clearCategory()"
+  >
+    Todas
+  </button>
+
+  <button
+    mat-stroked-button
+    *ngFor="let category of categories"
+    (click)="selectCategory(category)"
+  >
+    {{ category }}
+  </button>
+
+</div>
