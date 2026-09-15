@@ -1,0 +1,27 @@
+<p>catalog-page works!</p>
+<div class="catalog-container">
+  <h2>Catálogo de Productos</h2>
+
+  <div *ngIf="products.length === 0" class="loading">
+    <p>Cargando productos...</p>
+  </div>
+
+  <div class="product-grid" *ngIf="products.length > 0">
+    <div class="product-card" *ngFor="let product of products">
+      <div class="image-wrapper">
+        <img [src]="product.imageUrl || 'https://via.placeholder.com/200'" [alt]="product.name" />
+      </div>
+      <div class="product-info">
+        <h3>{{ product.name }}</h3>
+        <p class="description">{{ product.description }}</p>
+        <p class="price">${{ product.price }}</p>
+        
+        <button 
+          [class.active]="isInWishlist(product)" 
+          (click)="toggleWishlist(product)">
+          {{ isInWishlist(product) ? '♥ En Lista de Deseos' : '♡ Agregar a Deseos' }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

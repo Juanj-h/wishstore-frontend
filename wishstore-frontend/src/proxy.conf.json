@@ -1,0 +1,8 @@
+{
+  "/api": {
+    "target": "https://wishstore-api-gateway-production.up.railway.app",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

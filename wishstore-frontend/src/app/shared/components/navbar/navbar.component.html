@@ -1,0 +1,14 @@
+<mat-toolbar color="primary" class="navbar">
+  <div class="navbar-container">
+    <a routerLink="/" class="brand-logo">
+      <mat-icon>shopping_bag</mat-icon>
+      <span>WishStore</span>
+    </a>
+    <div class="nav-links">
+      <a mat-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Inicio</a>
+      <a mat-button routerLink="/catalog" routerLinkActive="active">Catálogo</a>
+      <a mat-button routerLink="/wishlist" routerLinkActive="active"><mat-icon>favorite</mat-icon> Wishlist</a>
+      <a mat-button routerLink="/history" routerLinkActive="active"><mat-icon>history</mat-icon> Historial</a>
+    </div>
+  </div>
+</mat-toolbar>
